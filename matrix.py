@@ -105,4 +105,4 @@ def __add__(self,other):
                 row.append(self.g[r][c] + other.g[r][c]) # add the matrices
             matrixSum.append(row)
     
-        return matrixSum
+        return Matrix(matrixSum)
