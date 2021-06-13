@@ -69,3 +69,19 @@ def inverse(self):
                     for j in range(len(inverse[0])):
                         inverse[i][j] = factor * inverse[i][j]
         return Matrix(inverse)
+    
+def T(self):
+        """
+        Returns a transposed copy of this Matrix.
+        """
+        matrix_transpose = []
+    # Loop through columns on outside loop
+        for c in range(self.w):
+            new_row = []
+        # Loop through columns on inner loop
+            for r in range(self.h):
+            # Column values will be filled by what were each row before
+                new_row.append(self.g[r][c])
+            matrix_transpose.append(new_row)
+    
+        return Matrix(matrix_transpose)
