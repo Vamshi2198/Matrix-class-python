@@ -52,10 +52,12 @@ class Matrix(object):
         if not self.is_square():
             raise(ValueError, "Cannot calculate the trace of a non-square matrix.")
         
-        diag = [self.g[i][i] for i in range(self.h)]
-        for i in range(1, len(diag)):
-            trace[i] = diag[i-1] + diag[i]
-        return trace
+        result = 0     
+        for i in range(self.h):
+            for j in range(self.w):
+                if i == j:
+                    result += self.g[i][j]
+        return result
         
     def inverse(self):
         """
