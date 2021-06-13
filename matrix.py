@@ -106,3 +106,24 @@ def __add__(self,other):
             matrixSum.append(row)
     
         return Matrix(matrixSum)
+
+ def __neg__(self):
+        """
+        Defines the behavior of - operator (NOT subtraction)
+
+        Example:
+
+        > my_matrix = Matrix([ [1, 2], [3, 4] ])
+        > negative  = -my_matrix
+        > print(negative)
+          -1.0  -2.0
+          -3.0  -4.0
+        """
+        result = zeroes(self.h,self.w)
+    
+    # For loop within a for loop to iterate over the matrices
+        for r in range(self.h):
+            for c in range(self.w):
+                result[r][c] = -self.g[r][c]
+    
+        return result
