@@ -45,7 +45,7 @@ class Matrix(object):
         d = self.g[1][1]   
         return (a * d - b * c) 
 
-   def trace(self):
+    def trace(self):
         """
         Calculates the trace of a matrix (sum of diagonal entries).
         """
@@ -57,7 +57,7 @@ class Matrix(object):
             trace[i] = diag[i-1] + diag[i]
         return trace
         
-   def inverse(self):
+    def inverse(self):
         """
         Calculates the inverse of a 1x1 or 2x2 Matrix.
         """
@@ -87,7 +87,7 @@ class Matrix(object):
                         inverse[i][j] = factor * inverse[i][j]
         return Matrix(inverse)
     
-   def T(self):
+    def T(self):
         """
         Returns a transposed copy of this Matrix.
         """
@@ -103,7 +103,7 @@ class Matrix(object):
     
         return Matrix(matrix_transpose)
 
-   def __add__(self,other):
+    def __add__(self,other):
         """
         Defines the behavior of the + operator
         """
@@ -145,7 +145,7 @@ class Matrix(object):
     
         return result
 
-   def __sub__(self, other):
+    def __sub__(self, other):
         """
         Defines the behavior of - operator (as subtraction)
         """
@@ -163,7 +163,7 @@ class Matrix(object):
     
         return Matrix(matrixSub)
 
-   def __mul__(self, other):
+    def __mul__(self, other):
         
         def get_row(self, row):
             return self[row]
@@ -197,7 +197,7 @@ class Matrix(object):
             result.append(row_result)
         return Matrix(result)
 
-   def __rmul__(self, other):
+    def __rmul__(self, other):
         """
         Called when the thing on the left of the * is not a matrix.
 
