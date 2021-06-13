@@ -145,3 +145,37 @@ def __sub__(self, other):
             matrixSub.append(row)
     
         return Matrix(matrixSub)
+
+def __mul__(self, other):
+        
+        def get_row(self, row):
+            return self[row]
+        
+        def get_column(other, column_number):
+            column = []
+            
+            for r in range(other.h):
+                column.append(other[r][column_number])
+            return column
+    
+        def dot_product(vector_one, vector_two):
+            result = 0
+    
+            for i in range(len(vector_one)):
+                result += vector_one[i] * vector_two[i]
+            return result 
+        """
+        Defines the behavior of * operator (matrix multiplication)
+        """
+        m_rows = self.h
+        p_columns = other.w
+        result=[]
+        for r in range(m_rows):
+            row_result = []
+            rowA = (self.g[r])
+            for c in range(p_columns):
+                colB = get_column(other,c)
+                dot_prod = dot_product(rowA, colB)
+                row_result.append(dot_prod)
+            result.append(row_result)
+        return Matrix(result)
