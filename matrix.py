@@ -85,3 +85,24 @@ def T(self):
             matrix_transpose.append(new_row)
     
         return Matrix(matrix_transpose)
+
+def __add__(self,other):
+        """
+        Defines the behavior of the + operator
+        """
+        if self.h != other.h or self.w != other.w:
+            raise(ValueError,"Matrices can only be added if the dimensions are the same") 
+            # initialize matrix to hold the results
+        matrixSum = []
+    
+    # matrix to hold a row for appending sums of each element
+        row = []
+    
+    # For loop within a for loop to iterate over the matrices
+        for r in range(self.h):
+            row = [] # reset the list
+            for c in range(self.w):
+                row.append(self.g[r][c] + other.g[r][c]) # add the matrices
+            matrixSum.append(row)
+    
+        return matrixSum
