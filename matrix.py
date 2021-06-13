@@ -20,7 +20,7 @@ class Matrix(object):
         g = [[0.0 for _ in range(width)] for __ in range(height)]
         return Matrix(g)
  
- def determinant(self):
+    def determinant(self):
         """
         Calculates the determinant of a 1x1 or 2x2 matrix.
         """
@@ -35,7 +35,7 @@ class Matrix(object):
         d = self.g[1][1]   
         return (a * d - b * c) 
 
-def trace(self):
+   def trace(self):
         """
         Calculates the trace of a matrix (sum of diagonal entries).
         """
@@ -47,7 +47,7 @@ def trace(self):
             trace[i] = diag[i-1] + diag[i]
         return trace
         
-def inverse(self):
+   def inverse(self):
         """
         Calculates the inverse of a 1x1 or 2x2 Matrix.
         """
@@ -77,7 +77,7 @@ def inverse(self):
                         inverse[i][j] = factor * inverse[i][j]
         return Matrix(inverse)
     
-def T(self):
+   def T(self):
         """
         Returns a transposed copy of this Matrix.
         """
@@ -93,7 +93,7 @@ def T(self):
     
         return Matrix(matrix_transpose)
 
-def __add__(self,other):
+   def __add__(self,other):
         """
         Defines the behavior of the + operator
         """
@@ -114,7 +114,7 @@ def __add__(self,other):
     
         return Matrix(matrixSum)
 
- def __neg__(self):
+    def __neg__(self):
         """
         Defines the behavior of - operator (NOT subtraction)
 
@@ -135,7 +135,7 @@ def __add__(self,other):
     
         return result
 
-def __sub__(self, other):
+   def __sub__(self, other):
         """
         Defines the behavior of - operator (as subtraction)
         """
@@ -153,7 +153,7 @@ def __sub__(self, other):
     
         return Matrix(matrixSub)
 
-def __mul__(self, other):
+   def __mul__(self, other):
         
         def get_row(self, row):
             return self[row]
@@ -187,7 +187,7 @@ def __mul__(self, other):
             result.append(row_result)
         return Matrix(result)
 
-def __rmul__(self, other):
+   def __rmul__(self, other):
         """
         Called when the thing on the left of the * is not a matrix.
 
