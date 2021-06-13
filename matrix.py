@@ -179,3 +179,25 @@ def __mul__(self, other):
                 row_result.append(dot_prod)
             result.append(row_result)
         return Matrix(result)
+
+def __rmul__(self, other):
+        """
+        Called when the thing on the left of the * is not a matrix.
+
+        Example:
+
+        > identity = Matrix([ [1,0], [0,1] ])
+        > doubled  = 2 * identity
+        > print(doubled)
+          2.0  0.0
+          0.0  2.0
+        """
+        if isinstance(other, numbers.Number):
+            pass
+        scalar_mul = []
+        for i in range(self.h):
+            row =[]
+            for j in range(self.w):
+                row.append(other*self.g[i][j])
+            scalar_mul.append(row)
+        return Matrix(scalar_mul)
