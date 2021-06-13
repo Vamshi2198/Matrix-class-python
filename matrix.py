@@ -127,3 +127,21 @@ def __add__(self,other):
                 result[r][c] = -self.g[r][c]
     
         return result
+
+def __sub__(self, other):
+        """
+        Defines the behavior of - operator (as subtraction)
+        """
+        matrixSub = []
+    
+    # matrix to hold a row for appending sums of each element
+        row = []
+    
+    # For loop within a for loop to iterate over the matrices
+        for r in range(self.h):
+            row = [] # reset the list
+            for c in range(self.w):
+                row.append(self.g[r][c] - other.g[r][c]) # add the matrices
+            matrixSub.append(row)
+    
+        return Matrix(matrixSub)
