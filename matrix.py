@@ -103,6 +103,22 @@ class Matrix(object):
     
         return Matrix(matrix_transpose)
 
+    def __getitem__(self,idx):
+        """
+        Defines the behavior of using square brackets [] on instances
+        of this class.
+
+        Example:
+
+        > my_matrix = Matrix([ [1, 2], [3, 4] ])
+        > my_matrix[0]
+          [1, 2]
+
+        > my_matrix[0][0]
+          1
+        """
+        return self.g[idx]
+
     def __add__(self,other):
         """
         Defines the behavior of the + operator
