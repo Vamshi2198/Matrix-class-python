@@ -27,3 +27,23 @@ class Matrix(object):
         c = self.g[1][0]
         d = self.g[1][1]   
         return (a * d - b * c) 
+
+def trace(self):
+        """
+        Calculates the trace of a matrix (sum of diagonal entries).
+        """
+        if not self.is_square():
+            raise(ValueError, "Cannot calculate the trace of a non-square matrix.")
+        
+        trace = []
+        non_trace = []
+        for i in range (self.h):
+            row = []
+            for j in range (self.w):
+                if i ==j:
+                    row.append(self.g[i][j])
+            trace.append(row)
+            continue
+        return trace
+
+        
