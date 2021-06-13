@@ -103,6 +103,10 @@ class Matrix(object):
     
         return Matrix(matrix_transpose)
 
+    def is_square(self):
+        return self.h == self.w
+
+
     def __getitem__(self,idx):
         """
         Defines the behavior of using square brackets [] on instances
