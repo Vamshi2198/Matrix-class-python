@@ -119,6 +119,16 @@ class Matrix(object):
         """
         return self.g[idx]
 
+    def __repr__(self):
+        """
+        Defines the behavior of calling print on an instance of this class.
+        """
+        s = ""
+        for row in self.g:
+            s += " ".join(["{} ".format(x) for x in row])
+            s += "\n"
+        return s
+
     def __add__(self,other):
         """
         Defines the behavior of the + operator
