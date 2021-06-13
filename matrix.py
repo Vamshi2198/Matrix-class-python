@@ -35,15 +35,8 @@ def trace(self):
         if not self.is_square():
             raise(ValueError, "Cannot calculate the trace of a non-square matrix.")
         
-        trace = []
-        non_trace = []
-        for i in range (self.h):
-            row = []
-            for j in range (self.w):
-                if i ==j:
-                    row.append(self.g[i][j])
-            trace.append(row)
-            continue
+        diag = [self.g[i][i] for i in range(self.h)]
+        for i in range(1, len(diag)):
+            trace[i] = diag[i-1] + diag[i]
         return trace
-
         
