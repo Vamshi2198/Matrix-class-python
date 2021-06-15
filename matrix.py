@@ -166,7 +166,7 @@ class Matrix(object):
         for i in range(self.h):
             for j in range(other_T.h):
                 result[i][j] = dot_product(self.g[i], other_T[j])
-    return result
+        return result
 
     def __rmul__(self, other):
         """
