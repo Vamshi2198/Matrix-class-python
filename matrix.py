@@ -136,9 +136,6 @@ class Matrix(object):
           -1.0  -2.0
           -3.0  -4.0
         """
-        result = zeroes(self.h,self.w)
-    
-    # For loop within a for loop to iterate over the matrices
         return Matrix([[-self.g[row][col] for row in range(self.h)] for col in range(self.w)])
 
     def __sub__(self, other):
@@ -158,40 +155,18 @@ class Matrix(object):
             matrixSub.append(row)
     
         return Matrix(matrixSub)
+        
+    def dot_product(v1, v2):
+        return sum([x1*x2 for x1,x2 in zip(v1,v2)])
 
     def __mul__(self, other):
-        
-        def get_row(self, row):
-            return self[row]
-        
-        def get_column(other, column_number):
-            column = []
-            
-            for r in range(other.h):
-                column.append(other[r][column_number])
-            return column
-    
-        def dot_product(vector_one, vector_two):
-            result = 0
-    
-            for i in range(len(vector_one)):
-                result += vector_one[i] * vector_two[i]
-            return result 
-        """
-        Defines the behavior of * operator (matrix multiplication)
-        """
-        m_rows = self.h
-        p_columns = other.w
-        result=[]
-        for r in range(m_rows):
-            row_result = []
-            rowA = (self.g[r])
-            for c in range(p_columns):
-                colB = get_column(other,c)
-                dot_prod = dot_product(rowA, colB)
-                row_result.append(dot_prod)
-            result.append(row_result)
-        return Matrix(result)
+
+        result = zeroes(self.h, other.w)
+        other_T = other.T()
+        for i in range(self.h):
+            for j in range(other_T.h):
+                result[i][j] = dot_product(self.g[i], other_T[j])
+    return result
 
     def __rmul__(self, other):
         """
