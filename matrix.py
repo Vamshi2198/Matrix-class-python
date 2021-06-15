@@ -139,11 +139,7 @@ class Matrix(object):
         result = zeroes(self.h,self.w)
     
     # For loop within a for loop to iterate over the matrices
-        for r in range(self.h):
-            for c in range(self.w):
-                result[r][c] = -self.g[r][c]
-    
-        return result
+        return Matrix([[-self.g[row][col] for row in range(self.h)] for col in range(self.w)])
 
     def __sub__(self, other):
         """
