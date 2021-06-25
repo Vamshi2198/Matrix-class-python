@@ -21,7 +21,8 @@ Python does not implement operations with matrix data type directly. A matrix ca
    * Addition, Subtraction, Negation, Multiplication and scalar multiplication of matrices.
 
 ## Examples
- ` m1 = Matrix([[1, 2],  
+ ```
+ m1 = Matrix([[1, 2],  
                [3, 4]])
 
    m2 = Matrix([[2, 5],
@@ -33,7 +34,7 @@ Python does not implement operations with matrix data type directly. A matrix ca
    m6 = Matrix.determinant(m3) # for calculating determinant.
    m7 = Matrix.trace(m4) # for calculating trace.
    m8 = Matrix.inverse(m5) # for calculating inverse.
-   m9 = Matrix.T(m2) # for transpose of a matrix.`
-   
+   m9 = Matrix.T(m2) # for transpose of a matrix.
+ ```  
 
 
