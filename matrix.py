@@ -55,7 +55,31 @@ class Matrix(object):
         """
         Calculates the inverse of a 1x1 or 2x2 Matrix.
         """
-        return 1.0 / self.determinant() * (self.trace() * identity(self.w) - self)
+        inverse =[]
+        if not self.is_square():
+            raise(ValueError, "Non-square Matrix does not have an inverse.")
+        if self.h > 2:
+            raise(NotImplementedError, "inversion not implemented for matrices larger than 2x2.")
+        if self.h == 1:
+            inverse.append([1/self.g[0][0]])
+        elif self.h == 2:
+            if self.determinant() == 0:
+                raise ValueError("Cannot find the inverse if determinant is 0")
+            else:
+                a = self.g[0][0]
+                b = self.g[0][1]
+                c = self.g[1][0]
+                d = self.g[1][1]
+
+                factor = 1 /(a * d - b * c)
+
+
+                inverse = [[d, -b],[-c, a]]
+
+                for i in range(len(inverse)):
+                    for j in range(len(inverse[0])):
+                        inverse[i][j] = factor * inverse[i][j]
+        return Matrix(inverse)
     
     def T(self):
         """
