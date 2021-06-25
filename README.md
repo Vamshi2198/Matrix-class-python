@@ -22,7 +22,7 @@ Python does not implement operations with matrix data type directly. A matrix ca
 
 ## Examples
  ```
- m1 = Matrix([[1, 2],  
+   m1 = Matrix([[1, 2],  
                [3, 4]])
 
    m2 = Matrix([[2, 5],
