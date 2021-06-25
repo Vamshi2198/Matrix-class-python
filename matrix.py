@@ -180,10 +180,10 @@ class Matrix(object):
     
         return Matrix(matrixSub)
         
-    def dot_product(v1, v2):
-        return sum([x1*x2 for x1,x2 in zip(v1,v2)])
-
     def __mul__(self, other):
+        
+        def dot_product(v1, v2):
+            return sum([x1*x2 for x1,x2 in zip(v1,v2)])
 
         result = zeroes(self.h, other.w)
         other_T = other.T()
@@ -191,7 +191,7 @@ class Matrix(object):
             for j in range(other_T.h):
                 result[i][j] = dot_product(self.g[i], other_T[j])
         return result
-
+        
     def __rmul__(self, other):
         """
         Called when the thing on the left of the * is not a matrix.
